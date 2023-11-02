@@ -4,14 +4,13 @@ import { Row, Col, Card, Button } from 'react-bootstrap';
 import ListOrderComponent from './components/ListOrderComponent';
 import ListFilterComponent from './components/ListFilterComponent';
 import PropertyListItem from './components/PropertyListItem';
+import Pagination from 'react-bootstrap/Pagination';
 import MyLoadingComponent from 'MyApp/my-components/MyLoadingComponent';
 import { FiPlus } from 'react-icons/fi';
-import AdvanceTablePagination from 'MyApp/components/common/advance-table/AdvanceTablePagination';
-
 
 const PropertyListPage = () => {
-  const [properties] = React.useState([1, 2, 3]);
-  const [loading] = React.useState(false);
+  const [properties] = React.useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
+  const [loading] = React.useState(true);
   return (
     <>
       <PageHeader
@@ -39,7 +38,18 @@ const PropertyListPage = () => {
             ))}
             <Row className="mt-3">
               <Col>
-                <AdvanceTablePagination />
+                <Pagination>
+                  <Pagination.First />
+                  <Pagination.Prev />
+                  <Pagination.Item active>{1}</Pagination.Item>
+                  <Pagination.Item>{2}</Pagination.Item>
+                  <Pagination.Item>{3}</Pagination.Item>
+                  <Pagination.Item>{4}</Pagination.Item>
+                  <Pagination.Ellipsis />
+                  <Pagination.Item>{20}</Pagination.Item>
+                  <Pagination.Next />
+                  <Pagination.Last />
+                </Pagination>
               </Col>
             </Row>
           </Col>
